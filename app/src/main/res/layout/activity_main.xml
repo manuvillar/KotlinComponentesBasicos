@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout del ejemplo: RadioGroup + RadioButton, CheckBox y Spinner.
+    El LinearLayout raíz NO lleva padding en el XML: se lo ponemos desde
+    Kotlin con los insets (barras del sistema + cámara + 16dp extra).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ===== RADIOGROUP: solo se puede elegir UNA opción ===== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige tu sistema operativo favorito:"
+        android:textStyle="bold" />
+
+    <!-- El RadioGroup agrupa los RadioButton y garantiza la selección única -->
+    <RadioGroup
+        android:id="@+id/radioGroupSO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/radioAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Android" />
+
+        <RadioButton
+            android:id="@+id/radioIos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iOS" />
+
+        <RadioButton
+            android:id="@+id/radioLinux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linux" />
+    </RadioGroup>
+
+    <!-- ===== CHECKBOX: cada uno es independiente (0, 1 o varios marcados) ===== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Qué lenguajes conoces?"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkKotlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kotlin" />
+
+    <CheckBox
+        android:id="@+id/checkJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Java" />
+
+    <!-- ===== SPINNER: lista desplegable, se elige UN elemento ===== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige tu curso:"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón que lee los tres componentes y muestra el resultado -->
+    <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar resumen" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp" />
+
+</LinearLayout>
